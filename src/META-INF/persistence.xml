@@ -7,6 +7,7 @@
     <class>entity.Stock</class>
     <class>entity.Quote</class>
     <class>entity.Date</class>
+    <class>entity.Rol</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/financial"/>
       <property name="javax.persistence.jdbc.password" value=""/>

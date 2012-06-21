@@ -44,7 +44,11 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Usuario");
 
@@ -69,8 +73,8 @@ public class LoginFrame extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox1, 0, 153, Short.MAX_VALUE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1)))
+                            .addComponent(jTextField1)
+                            .addComponent(jPasswordField1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addComponent(jButton1)))
@@ -102,6 +106,10 @@ public class LoginFrame extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
