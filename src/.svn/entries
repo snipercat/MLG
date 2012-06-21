@@ -1,0 +1,63 @@
+10
+
+dir
+0
+http://project-stunnicus.googlecode.com/svn/Financial/src
+http://project-stunnicus.googlecode.com/svn
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f6e52a7e-b5cb-532c-8a75-26003f2114a8
+
+bussines
+dir
+
+
+
+add
+
+dao
+dir
+
+
+
+add
+
+presentation
+dir
+
+
+
+add
+
+service
+dir
+
+
+
+add
+
+vo
+dir
+
+
+
+add
+

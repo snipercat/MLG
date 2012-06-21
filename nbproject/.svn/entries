@@ -1,0 +1,56 @@
+10
+
+dir
+0
+http://project-stunnicus.googlecode.com/svn/Financial/nbproject
+http://project-stunnicus.googlecode.com/svn
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f6e52a7e-b5cb-532c-8a75-26003f2114a8
+
+build-impl.xml
+file
+
+
+
+add
+
+genfiles.properties
+file
+
+
+
+add
+
+project.properties
+file
+
+
+
+add
+
+project.xml
+file
+
+
+
+add
+
