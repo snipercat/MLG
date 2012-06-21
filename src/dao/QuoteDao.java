@@ -67,7 +67,4 @@ public class QuoteDao {
         
     }
     
-    public List<Quote> getAllQuotes(EntityManager entityManager){
-        return entityManager.createNamedQuery("getAllCompanies", Quote.class).getResultList();
-    }
 }
