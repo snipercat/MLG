@@ -12,7 +12,15 @@ import javax.persistence.*;
  *
  * @author Joanna 8a
  */
-@Entity
+@javax.persistence.Entity(name = "Company")
+@NamedQueries({
+    @NamedQuery(name = "getCompanyById",
+    query = "SELECT c FROM Company c WHERE c.id = :companyId"),
+    @NamedQuery(name = "getAllCompanies",
+    query = "SELECT c FROM Company c"),
+    @NamedQuery(name = "getCompanyByMarketId",
+    query = "SELECT c FROM Company c WHERE c.mrkt = :MarketId")
+})
 public class Company implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
