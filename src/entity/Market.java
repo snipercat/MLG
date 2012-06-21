@@ -12,7 +12,13 @@ import javax.persistence.*;
  *
  * @author Joanna 8a
  */
-@Entity
+@javax.persistence.Entity(name = "Market")
+@NamedQueries({
+    @NamedQuery(name = "getMarketById",
+    query = "SELECT c FROM Market c WHERE c.id = :MarketId"),
+    @NamedQuery(name = "getAllMarkets",
+    query = "SELECT c FROM Date c")
+})
 public class Market implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

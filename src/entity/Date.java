@@ -12,7 +12,13 @@ import javax.persistence.*;
  *
  * @author Usuario
  */
-@Entity
+@javax.persistence.Entity(name = "Date")
+@NamedQueries({
+    @NamedQuery(name = "getDateById",
+    query = "SELECT c FROM Date c WHERE c.id = :DateId"),
+    @NamedQuery(name = "getAllDates",
+    query = "SELECT c FROM Date c")
+})
 public class Date implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

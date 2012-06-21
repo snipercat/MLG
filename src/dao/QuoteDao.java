@@ -1,6 +1,6 @@
 package dao;
 
-import entity.Company;
+import entity.Quote;
 import java.util.List;
 import javax.persistence.EntityManager;
 
@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
  *
  * @author Usuario
  */
-public class CompanyDao {
+public class QuoteDao {
     
     /*
      * Persist and Validation functions
@@ -19,11 +19,11 @@ public class CompanyDao {
                 throw new Exception("Entity Manager is null");
     }
     
-    public void create(EntityManager entityManager, Company entity){
+    public void create(EntityManager entityManager, Quote entity){
             entityManager.persist(entity);
     }
     
-    public Company update(EntityManager entityManager, Company entity)throws Exception {
+    public Quote update(EntityManager entityManager, Quote entity)throws Exception {
         checkEntityManager(entityManager);
         try {
             return entityManager.merge(entity);
@@ -32,7 +32,7 @@ public class CompanyDao {
         }
     }
     
-    public void delete(EntityManager entityManager, Company entity) throws Exception {
+    public void delete(EntityManager entityManager, Quote entity) throws Exception {
         try {
             entityManager.remove(entity);
         } catch (Exception e) {
@@ -42,26 +42,32 @@ public class CompanyDao {
             
     
     /**
-     * Functions of CompanyDao
+     * Functions of QuoteDao
      */
     
-    public Company getByCompanyId(EntityManager entityManager, Long Id) throws Exception{
+    public Quote getByQuoteId(EntityManager entityManager, Long Id) throws Exception{
 
         checkEntityManager(entityManager);
         try{
-            return entityManager.createNamedQuery("getCompanyById", Company.class).setParameter("companyId", Id).getSingleResult();
+            return entityManager.createNamedQuery("getQuoteById", Quote.class).setParameter("QuoteId", Id).getSingleResult();
         }
         catch(Exception e){
             throw new Exception(e.getMessage(),e.getCause());
         }
     }
     
-    public List<Company> getAllCompanies(EntityManager entityManager){
-        return entityManager.createNamedQuery("getAllCompanies", Company.class).getResultList();
+    public List<Quote> getAllQuotes(EntityManager entityManager) throws Exception{
+        checkEntityManager(entityManager);
+        try{
+            return entityManager.createNamedQuery("getAllCompanies", Quote.class).getResultList();
+        }
+        catch(Exception e){
+            throw new Exception(e.getMessage(),e.getCause());
+        }
+        
     }
     
-    public List<Company> getCompaniesByMarketId(EntityManager entityManager, Long MarketId){
-        return entityManager.createNamedQuery("getAllCompanies", Company.class).setParameter("MarketId", MarketId).getResultList();
+    public List<Quote> getAllQuotes(EntityManager entityManager){
+        return entityManager.createNamedQuery("getAllCompanies", Quote.class).getResultList();
     }
-        
 }
