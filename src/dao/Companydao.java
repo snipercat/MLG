@@ -10,11 +10,50 @@ import javax.persistence.EntityManager;
  */
 public class Companydao {
     
-    public Company getByCompanyId(EntityManager entityManager, Long Id){
-        //TODO: Change this validation by a Try Catch Block throwing a DtaBase Exception
-        if (entityManager != null)
+    /*
+     * Persist and Validation functions
+     * TODO: Add this functions to a father class. and the validation of Entity Manager
+     */
+    public void checkEntityManager(EntityManager entityManager) throws Exception{
+            if(entityManager == null)
+                throw new Exception("Entity Manager is null");
+    }
+    
+    public void create(EntityManager entityManager, Company entity){
+            entityManager.persist(entity);
+    }
+    
+    public Company update(EntityManager entityManager, Company entity)throws Exception {
+        checkEntityManager(entityManager);
+        try {
+            return entityManager.merge(entity);
+        } catch (Exception ex) {
+            throw new Exception(ex.getMessage(), ex.getCause());
+        }
+    }
+    
+    public void delete(EntityManager entityManager, Company entity) throws Exception {
+        try {
+            entityManager.remove(entity);
+        } catch (Exception e) {
+            throw new Exception(e.getMessage(), e.getCause());
+        }
+    }
+            
+    
+    /**
+     * Functions of CompanyDao
+     */
+    
+    public Company getByCompanyId(EntityManager entityManager, Long Id) throws Exception{
+
+        checkEntityManager(entityManager);
+        try{
             return entityManager.createNamedQuery("getCompanyById", Company.class).setParameter("companyId", Id).getSingleResult();
-        return null;
+        }
+        catch(Exception e){
+            throw new Exception(e.getMessage(),e.getCause());
+        }
     }
     
     public List<Company> getAllCompanies(EntityManager entityManager){
